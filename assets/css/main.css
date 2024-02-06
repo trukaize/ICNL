@@ -2128,7 +2128,7 @@ input, select, textarea {
 				}
 
 				#nav > ul > li.current > a {
-					background: #d52349;
+					background: #f67b96;
 					color: #fff !important;
 					font-weight: 700;
 				}
@@ -2184,9 +2184,9 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		background: #CCE8F4 url("../../images/pic01.jpg");
+		background: #CCE8F4 url("../../images/pic001.jpg");
 		background-position: center center;
-		background-size: auto 100%;
+		background-size: auto 200%;
 		background-repeat: no-repeat;
 		text-align: center;
 		position: relative;
@@ -2195,25 +2195,26 @@ input, select, textarea {
 	}
 
 		#banner header {
-			background-color: rgba(34, 30, 31, 0.98);
-			display: inline-block;
+			background-color: transparent;
+			display: inline-black;
 			padding: 2.5em 5em;
 			border-radius: 5px;
 		}
 
 			#banner header h2 {
-				color: #fff;
+				color: #F0FFFF;
 				font-weight: 700;
 				font-size: 2.5em;
 				margin: 0 0 0.65em 0;
 			}
 
 			#banner header p {
-				color: #d52349;
+				color: #F0FFFF;
+				font-weight: 400;
 				padding: 0;
 				font-style: normal;
 				margin: 0;
-				font-size: 1.5em;
+				font-size: 1.8em;
 			}
 
 /* Intro */
