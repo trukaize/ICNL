@@ -1648,7 +1648,7 @@ input, select, textarea {
 		input[type="reset"].alt,
 		button.alt,
 		.button.alt {
-			background: #252122;
+			background: #914abb;
 		}
 
 			input[type="button"].alt:hover,
@@ -1656,7 +1656,7 @@ input, select, textarea {
 			input[type="reset"].alt:hover,
 			button.alt:hover,
 			.button.alt:hover {
-				background: #353132;
+				background: #914abb;
 			}
 
 			input[type="button"].alt:active,
@@ -1664,7 +1664,7 @@ input, select, textarea {
 			input[type="reset"].alt:active,
 			button.alt:active,
 			.button.alt:active {
-				background: #151112;
+				background: #914abb;
 			}
 
 		input[type="button"].icon:before,
@@ -2128,7 +2128,7 @@ input, select, textarea {
 				}
 
 				#nav > ul > li.current > a {
-					background: #f67b96;
+					background: #b85cd7;
 					color: #fff !important;
 					font-weight: 700;
 				}
@@ -2186,7 +2186,7 @@ input, select, textarea {
 	#banner {
 		background: #CCE8F4 url("../../images/pic001.jpg");
 		background-position: center center;
-		background-size: auto 200%;
+		background-size: auto 400%;
 		background-repeat: no-repeat;
 		text-align: center;
 		position: relative;
@@ -2203,7 +2203,7 @@ input, select, textarea {
 
 			#banner header h2 {
 				color: #F0FFFF;
-				font-weight: 700;
+				font-weight: 8\00;
 				font-size: 2.5em;
 				margin: 0 0 0.65em 0;
 			}
