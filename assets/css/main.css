@@ -143,8 +143,10 @@ input, select, textarea {
 		text-decoration: none;
 	}
 
+
 	h2 {
-		font-size: 1.5em;
+  	font-size: 1.5em; 
+	letter-spacing: -0.035em;
 	}
 
 	h3 {
@@ -172,7 +174,8 @@ input, select, textarea {
 	}
 
 	p, ul, ol, dl, table {
-		margin-bottom: 2em;
+		margin-bottom: 2em; letter-spacing: -0.03em;
+
 	}
 
 /* Container */
@@ -2184,7 +2187,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		background: #CCE8F4 url("../../images/pic0001.png");
+		background: #CCE8F4 url("../../images/pic000001.png");
 		background-position: center center;
 		background-size: auto 400%;
 		background-repeat: no-repeat;
