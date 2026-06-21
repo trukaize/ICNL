@@ -1852,7 +1852,7 @@ input, select, textarea {
 			position: absolute;
 			left: 0;
 			top: 1.3em;
-			background-color: #DC143C;
+			background-color: #d52349;
 			height: 3.5em;
 			text-align: center;
 			color: #fff;
@@ -1867,7 +1867,7 @@ input, select, textarea {
 				position: absolute;
 				bottom: 0;
 				right: -1.2em;
-				border-left: solid 1.25em #DC143C;
+				border-left: solid 1.25em #d52349;
 				border-top: solid 1.8em transparent;
 				border-bottom: solid 1.8em transparent;
 			}
@@ -2141,7 +2141,7 @@ input, select, textarea {
 				}
 
 				#nav > ul > li.current > a {
-					background: #DC143C;
+					background: #d52349;
 					color: #fff !important;
 					font-weight: 700;
 				}
@@ -2942,3 +2942,16 @@ input, select, textarea {
 			}
 
 	}
+
+
+/* ===== Crimson redesign: footer logos ===== */
+#copyright .footer-logos{display:flex;align-items:center;justify-content:center;gap:22px;background:transparent;margin-bottom:1.1em;}
+#copyright .footer-logos img{height:30px;width:auto;display:block;}
+#copyright .footer-logos .logo-divider{width:1px;height:32px;background:rgba(255,255,255,0.65);}
+@media screen and (max-width:736px){#copyright .footer-logos{gap:14px;}#copyright .footer-logos img{height:22px;}#copyright .footer-logos .logo-divider{height:24px;}}
+
+/* ===== Crimson redesign: footer copyright text white ===== */
+#copyright ul.links, #copyright ul.links li, #copyright ul.links a, #copyright ul.links b, #copyright ul.links span{color:#ffffff !important;}
+
+/* ===== Crimson redesign: tighten homepage footer gap ===== */
+body.homepage #copyright{margin-top:0.5em;}
