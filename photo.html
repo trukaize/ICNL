@@ -87,6 +87,84 @@
 	padding-bottom: 6px;
 	margin-top: 1.5em;
  }
+
+ /* Multi-photo slider (several photos for one topic) */
+ .photo-slider .slides {
+	position: relative;
+	height: 180px;
+	overflow: hidden;
+ }
+ .photo-slider .slides a {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	transition: opacity .3s ease;
+	pointer-events: none;
+ }
+ .photo-slider .slides a.is-active {
+	opacity: 1;
+	pointer-events: auto;
+ }
+ .photo-slider .slider-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 50%;
+	background: rgba(0,0,0,0.45);
+	color: #fff;
+	font-size: 18px;
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer;
+	z-index: 2;
+	opacity: 0;
+	transition: opacity .2s ease, background .2s ease;
+	box-shadow: none;
+ }
+ .photo-slider .slider-btn:hover { background: rgba(239,111,108,0.9); }
+ .photo-slider .slider-btn.prev { left: 6px; }
+ .photo-slider .slider-btn.next { right: 6px; }
+ .photo-slider:hover .slider-btn { opacity: 1; }
+ .photo-slider .slide-count {
+	position: absolute;
+	right: 8px;
+	bottom: 8px;
+	padding: 2px 8px;
+	border-radius: 10px;
+	background: rgba(0,0,0,0.55);
+	color: #fff;
+	font-size: 0.7em;
+	line-height: 1.5;
+	z-index: 2;
+	pointer-events: none;
+ }
+ .photo-slider .slide-dots {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 8px;
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	z-index: 2;
+	pointer-events: none;
+ }
+ .photo-slider .slide-dots span {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.55);
+	box-shadow: 0 0 2px rgba(0,0,0,0.6);
+ }
+ .photo-slider .slide-dots span.is-active { background: #ef6f6c; }
+ @media (hover: none) {
+	.photo-slider .slider-btn { opacity: 1; }
+ }
 </style>
 				<section id="main">
 					<div class="container">
@@ -103,21 +181,49 @@
 								<h2 class="year-heading">2026</h2>
 								<div class="photo-grid">
 									<figure><a href="photos/2026/infocom_2026.jpg" target="_blank"><img src="photos/2026/infocom_2026.jpg" loading="lazy" alt="IEEE INFOCOM 2026" /></a><figcaption>IEEE INFOCOM</figcaption></figure>
-									<figure><a href="photos/2026/secon_2026.JPG" target="_blank"><img src="photos/2026/secon_2026.JPG" loading="lazy" alt="Pyeongjun's presentation in IEEE SECON 2026" /></a><figcaption>Pyeongjun's Presentation in IEEE SECON</figcaption></figure>
-									<figure><a href="photos/2026/secon_2_2026.JPG" target="_blank"><img src="photos/2026/secon_2_2026.JPG" loading="lazy" alt="Pyeongjun's presentation in IEEE SECON 2026" /></a><figcaption>IEEE SECON</figcaption></figure>
+
+									<figure class="photo-slider">
+										<div class="slides">
+											<a href="photos/2026/secon_2026.JPG" target="_blank" data-caption="Pyeongjun's Presentation in IEEE SECON"><img src="photos/2026/secon_2026.JPG" loading="lazy" alt="Pyeongjun's presentation in IEEE SECON 2026" /></a>
+											<a href="photos/2026/secon_2_2026.JPG" target="_blank" data-caption="IEEE SECON"><img src="photos/2026/secon_2_2026.JPG" loading="lazy" alt="IEEE SECON 2026" /></a>
+										</div>
+										<figcaption>Pyeongjun's Presentation in IEEE SECON</figcaption>
+									</figure>
+
 									<figure><a href="photos/2026/NOMS_2026.PNG" target="_blank"><img src="photos/2026/NOMS_2026.PNG" loading="lazy" alt="Jeonghwan's presentation in IEEE/IFIP NOMS 2026" /></a><figcaption>Jeonghwan's Presentation in IEEE/IFIP NOMS</figcaption></figure>
-									<figure><a href="photos/2026/comm_conf_2026.jpg" target="_blank"><img src="photos/2026/comm_conf_2026.jpg" loading="lazy" alt="KICS Summer Conference 2026" /></a><figcaption>KICS Summer Conference</figcaption></figure>
-									<figure><a href="photos/2026/comm_conf_2026_2.jpg" target="_blank"><img src="photos/2026/comm_conf_2026_2.jpg" loading="lazy" alt="KICS Summer Conference 2026" /></a><figcaption>KICS Summer Conference</figcaption></figure>
-									<figure><a href="photos/2026/comm_conf_2026_3.jpg" target="_blank"><img src="photos/2026/comm_conf_2026_3.jpg" loading="lazy" alt="KICS Summer Conference 2026" /></a><figcaption>KICS Summer Conference</figcaption></figure>
-									<figure><a href="photos/2026/comm_conf_2026_4.JPG" target="_blank"><img src="photos/2026/comm_conf_2026_4.JPG" loading="lazy" alt="KICS Summer Conference 2026" /></a><figcaption>Yeonghun's Presentation in KICS Summer Conference</figcaption></figure>
+
+									<figure class="photo-slider">
+										<div class="slides">
+											<a href="photos/2026/comm_conf_2026.jpg" target="_blank" data-caption="KICS Summer Conference"><img src="photos/2026/comm_conf_2026.jpg" loading="lazy" alt="KICS Summer Conference 2026" /></a>
+											<a href="photos/2026/comm_conf_2026_2.jpg" target="_blank" data-caption="KICS Summer Conference"><img src="photos/2026/comm_conf_2026_2.jpg" loading="lazy" alt="KICS Summer Conference 2026" /></a>
+											<a href="photos/2026/comm_conf_2026_3.jpg" target="_blank" data-caption="KICS Summer Conference"><img src="photos/2026/comm_conf_2026_3.jpg" loading="lazy" alt="KICS Summer Conference 2026" /></a>
+											<a href="photos/2026/comm_conf_2026_4.JPG" target="_blank" data-caption="Yeonghun's Presentation in KICS Summer Conference"><img src="photos/2026/comm_conf_2026_4.JPG" loading="lazy" alt="Yeonghun's presentation in KICS Summer Conference 2026" /></a>
+										</div>
+										<figcaption>KICS Summer Conference</figcaption>
+									</figure>
+
 									<figure><a href="photos/2026/grad_sojung_2026.jpg" target="_blank"><img src="photos/2026/grad_sojung_2026.jpg" loading="lazy" alt="Sojung's graduation 2026" /></a><figcaption>Sojung's Graduation</figcaption></figure>
-									<figure><a href="photos/2026/smart_mobility_promo_2026.jpg" target="_blank"><img src="photos/2026/smart_mobility_promo_2026.jpg" loading="lazy" alt="Smart mobility promotion 2026" /></a><figcaption>Lab Promotion</figcaption></figure>
-									<figure><a href="photos/2026/smart_mobility_promo_2026_2.png" target="_blank"><img src="photos/2026/smart_mobility_promo_2026_2.png" loading="lazy" alt="Smart mobility promotion 2026" /></a><figcaption>Lab Promotion</figcaption></figure>
-									<figure><a href="photos/2026/teachers_day_2026_1.jpg" target="_blank"><img src="photos/2026/teachers_day_2026_1.jpg" loading="lazy" alt="Teacher's Day 2026" /></a><figcaption>Eunsu's Graduation</figcaption></figure>
-									<figure><a href="photos/2026/teachers_day_2026_2.jpg" target="_blank"><img src="photos/2026/teachers_day_2026_2.jpg" loading="lazy" alt="Teacher's Day 2026" /></a><figcaption>Teacher's Day</figcaption></figure>
-									<figure><a href="photos/2026/teachers_day_2026_3.jpg" target="_blank"><img src="photos/2026/teachers_day_2026_3.jpg" loading="lazy" alt="Teacher's Day 2026" /></a><figcaption>Teacher's Day</figcaption></figure>
+
+									<figure class="photo-slider">
+										<div class="slides">
+											<a href="photos/2026/smart_mobility_promo_2026.jpg" target="_blank" data-caption="Lab Promotion"><img src="photos/2026/smart_mobility_promo_2026.jpg" loading="lazy" alt="Smart mobility promotion 2026" /></a>
+											<a href="photos/2026/smart_mobility_promo_2026_2.png" target="_blank" data-caption="Lab Promotion"><img src="photos/2026/smart_mobility_promo_2026_2.png" loading="lazy" alt="Smart mobility promotion 2026" /></a>
+										</div>
+										<figcaption>Lab Promotion</figcaption>
+									</figure>
+
+									<figure><a href="photos/2026/teachers_day_2026_1.jpg" target="_blank"><img src="photos/2026/teachers_day_2026_1.jpg" loading="lazy" alt="Eunsu's graduation 2026" /></a><figcaption>Eunsu's Graduation</figcaption></figure>
+
+									<figure class="photo-slider">
+										<div class="slides">
+											<a href="photos/2026/teachers_day_2026_2.jpg" target="_blank" data-caption="Teacher's Day"><img src="photos/2026/teachers_day_2026_2.jpg" loading="lazy" alt="Teacher's Day 2026" /></a>
+											<a href="photos/2026/teachers_day_2026_3.jpg" target="_blank" data-caption="Teacher's Day"><img src="photos/2026/teachers_day_2026_3.jpg" loading="lazy" alt="Teacher's Day 2026" /></a>
+										</div>
+										<figcaption>Teacher's Day</figcaption>
+									</figure>
+
 									<figure><a href="photos/2026/worldcup_2026.JPG" target="_blank"><img src="photos/2026/worldcup_2026.JPG" loading="lazy" alt="World Cup viewing 2026" /></a><figcaption>World Cup Viewing</figcaption></figure>
-								<figure><a href="photos/2026/intern_gathering_2026.JPG" target="_blank"><img src="photos/2026/intern_gathering_2026.JPG" loading="lazy" alt="Undergraduate intern welcome lunch 2026" /></a><figcaption>Intern Welcome Lunch</figcaption></figure>
+									<figure><a href="photos/2026/intern_gathering_2026.JPG" target="_blank"><img src="photos/2026/intern_gathering_2026.JPG" loading="lazy" alt="Undergraduate intern welcome lunch 2026" /></a><figcaption>Intern Welcome Lunch</figcaption></figure>
 									<figure><a href="photos/2026/icnl_sera_workshop_2026.jpg" target="_blank"><img src="photos/2026/icnl_sera_workshop_2026.jpg" loading="lazy" alt="Joint workshop with ICNL and SERA Lab 2026" /></a><figcaption>Joint Workshop with ICNL and SERA Lab</figcaption></figure>
 								</div>
 
@@ -125,20 +231,46 @@
 								<h2 class="year-heading">2025</h2>
 								<div class="photo-grid">
 									<figure><a href="photos/2025/ku_group_2025.jpg" target="_blank"><img src="photos/2025/ku_group_2025.jpg" loading="lazy" alt="KU group photo 2025" /></a><figcaption>Korea University Group Photo</figcaption></figure>
-									<figure><a href="photos/2025/ICTC_2025_1.JPG" target="_blank"><img src="photos/2025/ICTC_2025_1.JPG" loading="lazy" alt="ICTC 2025" /></a><figcaption>ICTC Conference</figcaption></figure>
-									<figure><a href="photos/2025/ICTC_2025_2.jpg" target="_blank"><img src="photos/2025/ICTC_2025_2.jpg" loading="lazy" alt="ICTC 2025" /></a><figcaption>ICTC Conference</figcaption></figure>
+
+									<figure class="photo-slider">
+										<div class="slides">
+											<a href="photos/2025/ICTC_2025_1.JPG" target="_blank" data-caption="ICTC Conference"><img src="photos/2025/ICTC_2025_1.JPG" loading="lazy" alt="ICTC 2025" /></a>
+											<a href="photos/2025/ICTC_2025_2.jpg" target="_blank" data-caption="ICTC Conference"><img src="photos/2025/ICTC_2025_2.jpg" loading="lazy" alt="ICTC 2025" /></a>
+										</div>
+										<figcaption>ICTC Conference</figcaption>
+									</figure>
+
 									<figure><a href="photos/2025/kics_2025.jpg" target="_blank"><img src="photos/2025/kics_2025.jpg" loading="lazy" alt="KICS 2025" /></a><figcaption>KICS Conference</figcaption></figure>
-									<figure><a href="photos/2025/top_conf_day_2025_1.jpg" target="_blank"><img src="photos/2025/top_conf_day_2025_1.jpg" loading="lazy" alt="Top Conference Day 2025" /></a><figcaption>Top Conference Day</figcaption></figure>
-									<figure><a href="photos/2025/top_conf_day_2025_2.jpg" target="_blank"><img src="photos/2025/top_conf_day_2025_2.jpg" loading="lazy" alt="Top Conference Day 2025" /></a><figcaption>KU Group Photo</figcaption></figure>
+
+									<figure class="photo-slider">
+										<div class="slides">
+											<a href="photos/2025/top_conf_day_2025_1.jpg" target="_blank" data-caption="Top Conference Day"><img src="photos/2025/top_conf_day_2025_1.jpg" loading="lazy" alt="Top Conference Day 2025" /></a>
+											<a href="photos/2025/top_conf_day_2025_2.jpg" target="_blank" data-caption="Top Conference Day &mdash; KU Group Photo"><img src="photos/2025/top_conf_day_2025_2.jpg" loading="lazy" alt="Top Conference Day 2025" /></a>
+										</div>
+										<figcaption>Top Conference Day</figcaption>
+									</figure>
+
 									<figure><a href="photos/2025/teachers_day_2025.jpg" target="_blank"><img src="photos/2025/teachers_day_2025.jpg" loading="lazy" alt="Teacher's Day 2025" /></a><figcaption>Teacher's Day</figcaption></figure>
 									<figure><a href="photos/2025/mountain_2025.JPG" target="_blank"><img src="photos/2025/mountain_2025.JPG" loading="lazy" alt="Mountain hiking 2025" /></a><figcaption>Mountain Hiking</figcaption></figure>
 									<figure><a href="photos/2025/soccer_2025.jpg" target="_blank"><img src="photos/2025/soccer_2025.jpg" loading="lazy" alt="Soccer match 2025" /></a><figcaption>Soccer Match</figcaption></figure>
 									<figure><a href="photos/2025/lunch_2025.jpg" target="_blank"><img src="photos/2025/lunch_2025.jpg" loading="lazy" alt="Lab lunch 2025" /></a><figcaption>Lab Lunch</figcaption></figure>
 									<figure><a href="photos/2025/summer_dinner_2025.jpg" target="_blank"><img src="photos/2025/summer_dinner_2025.jpg" loading="lazy" alt="Summer dinner 2025" /></a><figcaption>Summer Dinner</figcaption></figure>
-									<figure><a href="photos/2025/dinner_2025.jpg" target="_blank"><img src="photos/2025/dinner_2025.jpg" loading="lazy" alt="Lab dinner 2025" /></a><figcaption>Lab Dinner</figcaption></figure>
-									<figure><a href="photos/2025/dinner_2025_2.jpg" target="_blank"><img src="photos/2025/dinner_2025_2.jpg" loading="lazy" alt="Lab dinner 2025" /></a><figcaption>Lab Dinner</figcaption></figure>
-									<figure><a href="photos/2025/year_end_dinner_2025.png" target="_blank"><img src="photos/2025/year_end_dinner_2025.png" loading="lazy" alt="Year-end dinner 2025" /></a><figcaption>Year-end Dinner</figcaption></figure>
-									<figure><a href="photos/2025/yearend_2025.jpg" target="_blank"><img src="photos/2025/yearend_2025.jpg" loading="lazy" alt="Year-end gathering 2025" /></a><figcaption>Year-end Gathering</figcaption></figure>
+
+									<figure class="photo-slider">
+										<div class="slides">
+											<a href="photos/2025/dinner_2025.jpg" target="_blank" data-caption="Lab Dinner"><img src="photos/2025/dinner_2025.jpg" loading="lazy" alt="Lab dinner 2025" /></a>
+											<a href="photos/2025/dinner_2025_2.jpg" target="_blank" data-caption="Lab Dinner"><img src="photos/2025/dinner_2025_2.jpg" loading="lazy" alt="Lab dinner 2025" /></a>
+										</div>
+										<figcaption>Lab Dinner</figcaption>
+									</figure>
+
+									<figure class="photo-slider">
+										<div class="slides">
+											<a href="photos/2025/year_end_dinner_2025.png" target="_blank" data-caption="Year-end Dinner"><img src="photos/2025/year_end_dinner_2025.png" loading="lazy" alt="Year-end dinner 2025" /></a>
+											<a href="photos/2025/yearend_2025.jpg" target="_blank" data-caption="Year-end Gathering"><img src="photos/2025/yearend_2025.jpg" loading="lazy" alt="Year-end gathering 2025" /></a>
+										</div>
+										<figcaption>Year-end Dinner</figcaption>
+									</figure>
 								</div>
 
 								<!-- 2024 -->
@@ -216,6 +348,53 @@
 				<script src="assets/js/breakpoints.min.js"></script>
 				<script src="assets/js/util.js"></script>
 				<script src="assets/js/main.js"></script>
+
+			<!-- Photo slider: prev/next through several photos of one topic -->
+				<script>
+				(function () {
+					document.querySelectorAll('.photo-slider').forEach(function (fig) {
+						var wrap = fig.querySelector('.slides');
+						var slides = Array.prototype.slice.call(wrap.querySelectorAll('a'));
+						var caption = fig.querySelector('figcaption');
+						if (slides.length < 2) { if (slides[0]) slides[0].classList.add('is-active'); return; }
+
+						var idx = 0;
+
+						var prev = document.createElement('button');
+						prev.type = 'button'; prev.className = 'slider-btn prev';
+						prev.setAttribute('aria-label', 'Previous photo'); prev.innerHTML = '&#8249;';
+						var next = document.createElement('button');
+						next.type = 'button'; next.className = 'slider-btn next';
+						next.setAttribute('aria-label', 'Next photo'); next.innerHTML = '&#8250;';
+						var count = document.createElement('span'); count.className = 'slide-count';
+						var dots = document.createElement('div'); dots.className = 'slide-dots';
+						slides.forEach(function () { dots.appendChild(document.createElement('span')); });
+						wrap.appendChild(prev); wrap.appendChild(next); wrap.appendChild(count); wrap.appendChild(dots);
+
+						function show(i) {
+							idx = (i + slides.length) % slides.length;
+							slides.forEach(function (s, k) { s.classList.toggle('is-active', k === idx); });
+							Array.prototype.forEach.call(dots.children, function (d, k) { d.classList.toggle('is-active', k === idx); });
+							count.textContent = (idx + 1) + ' / ' + slides.length;
+							var c = slides[idx].getAttribute('data-caption');
+							if (caption && c) caption.innerHTML = c;
+						}
+						prev.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); show(idx - 1); });
+						next.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); show(idx + 1); });
+
+						// Touch swipe
+						var startX = null;
+						wrap.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+						wrap.addEventListener('touchend', function (e) {
+							if (startX === null) return;
+							var dx = e.changedTouches[0].clientX - startX; startX = null;
+							if (Math.abs(dx) > 40) show(dx < 0 ? idx + 1 : idx - 1);
+						}, { passive: true });
+
+						show(0);
+					});
+				})();
+				</script>
 
 		</body>
 	</html>
